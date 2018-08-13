@@ -122,11 +122,12 @@ for d in "${dirs[@]}"
     echo "Compressing $d"
     # tar -cvzf $d.tar.gz $d
     cd $filepath
-    cwd=${PWD##*/}
+    zipthisdir=${PWD##*/}
     cd ..
-    echo $cwd
-    pwd
-    tar -cvzf $d.tar.gz $cwd/
+    year=${PWD##*/}
+    zipname=$year-$zipthisdir
+    cd ..
+    tar -cvzf $year/$zipname.tar.gz $year/$zipthisdir/
     # Test Tar (Dry Run)
     # tar -cvzf - $d | wc -c
     fi
