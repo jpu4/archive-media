@@ -78,7 +78,7 @@ for d in "${dirs[@]}"
                         echo "No rules for $file ...skipping"
 
                     ;;
-                    "video/x-msvideo"|"video/quicktime"|"video/3gp"|"video/mpeg")
+                    "video/x-msvideo"|"video/quicktime"|"video/3gpp"|"video/mpeg"|"video/x-ms-asf")
                     # Shrink video files and output as mp4, 
                     # copy metadata to match then delete the old.
 
@@ -100,7 +100,7 @@ for d in "${dirs[@]}"
                         echo "Processing rules for $file"
                         rm -rf $file
                     ;;
-                    "image/jpeg")
+                    "image/jpeg"|"image/pjpeg")
 
                         echo "Processing rules for $file"
                         jpegoptim -bPpvt -m 70 $file
