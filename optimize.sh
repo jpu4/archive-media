@@ -120,7 +120,13 @@ for d in "${dirs[@]}"
 
     # Compress processed directories
     echo "Compressing $d"
-    tar -cvzf $d.tar.gz $d
+    # tar -cvzf $d.tar.gz $d
+    cd $filepath
+    cwd=${PWD##*/}
+    cd ..
+    echo $cwd
+    pwd
+    tar -cvzf $d.tar.gz $cwd/
     # Test Tar (Dry Run)
     # tar -cvzf - $d | wc -c
     fi
