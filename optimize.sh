@@ -78,7 +78,7 @@ for d in "${dirs[@]}"
                         echo "No rules for $file ...skipping"
 
                     ;;
-                    "video/x-msvideo"|"video/quicktime"|"video/3gpp"|"video/mpeg"|"video/x-ms-asf")
+                    "video/x-msvideo"|"video/quicktime"|"video/3gpp"|"video/mpeg"|"video/x-ms-asf"|"video/mp4")
                     # Shrink video files and output as mp4, 
                     # copy metadata to match then delete the old.
 
