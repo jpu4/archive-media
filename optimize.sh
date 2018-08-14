@@ -83,7 +83,7 @@ for d in "${dirs[@]}"
                     # copy metadata to match then delete the old.
 
                         echo "Processing rules for $file"
-                        newfile="$filepath/$(date -r "$file" +"%Y%m%d_%H%M%S%3N").mp4"
+                        newfile="$filepath/$(date -r "$file" +"%Y%m%d_%H%M%S%3N")$(( $RANDOM % 100 )).mp4"
                         echo "filepath=$filepath"
                         echo "newfile=$newfile"
                         ffmpeg -i $file -c:v libx264 -crf 30 $newfile
