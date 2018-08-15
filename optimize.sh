@@ -69,13 +69,13 @@ for d in "${dirs[@]}"
                  # echo "File extension: " $ext
                  extlc="$(echo $ext | tr '[A-Z]' '[a-z]')"
 
-                if [ "$file" == "thumb.db" | "$file" == "picasa.ini" ]; then
+                if [[ "$file" == "thumb.db" ]] || [[ "$file" == "picasa.ini" ]]; then
                     rm -rf $file
                 fi
 
                 # Assign rules to process files based on type
                 case $MIMETYPE in 
-                    "application/x-gzip"|"text/plain"|"text/x-shellscript"|"application/zip"|"application/x-rar-compressed"|"application/octet-stream")
+                    "application/x-gzip"|"application/pdf"|"text/plain"|"text/x-shellscript"|"application/zip"|"application/x-rar-compressed"|"application/octet-stream")
 
                         # do nothing (Skip it)
                         echo "Processing rules for $file"
